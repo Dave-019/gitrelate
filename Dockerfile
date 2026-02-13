@@ -1,10 +1,10 @@
-FROM oven/bun:1.2 AS base
+FROM oven/bun:latest AS base
 
 # Install dependencies
 FROM base AS deps
 WORKDIR /app
 COPY package.json bun.lockb ./
-RUN bun install --frozen-lockfile
+RUN bun install
 
 # Build the application
 FROM base AS builder
