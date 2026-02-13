@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   experimental: {
-    // Disable prefetching on hover
+  
     optimisticClientCache: false,
   },
-  // Add headers to discourage bots and crawlers
+ 
   async headers() {
     return [
       {
